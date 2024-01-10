@@ -1,0 +1,43 @@
+                :root {
+                   --mycolor01: #B78338;
+                   --mycolor02: #e4b660;
+                   --mycolor03: #ffd954;
+                   --mycolor04: #7bc5ae;
+                   --mycolor05: #d1ede1;
+                   --mycolor06: #028c6a;
+                   --mycolor07: #7fb174;
+                   --mycolor08: #689c97;
+                   --mycolor09: #003e19;
+                   --mycolor10: #915C4C;
+                   --mycolor11: #40686a;
+                   --mycolor12: #1d6a96;
+                   --mycolor13: #85b8cb;
+                   --mycolor14: #2F1812;
+                   --mycolor15: #D5D2C1;
+                   --mycolor16: #BD8E62;
+                   --mycolor17: #A46843;
+                   --mycolor18: #370D00;
+                   --mycolor19: #fe7773;
+                   --mycolor20: #ffc2c3;
+                   --mycolor21: #e81e25;
+                   --mycolor22: #0e0301;
+                   --mycolor23: #d3b7d8;
+                   --mycolor24: #a13e97;
+                   --mycolor25: #632a7e;
+                   --mycolor26: #280e3b;
+                   --mycolor27: #094b61;
+                   --mycolor28: #19b3b1;
+                   --mytext01: #303030;
+                   --mytext02: #fbfdfb;
+                   --mytext03: #023459;
+                   --mytext04: #002c2f;
+                   --mytext05: #1e646e;
+                   --mytext06: #ae4951;
+                   --mytext07: #161b1f;
+               }
+               
+               .bg-cover {
+                   background-position: center center;
+                   background-size: cover;
+                   background-repeat: no-repeat;
+               }

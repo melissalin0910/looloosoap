@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>抱皂美人-首頁</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/mine.css" />
+    <link rel="shortcut icon" href="./images/logo/virgo_logo2.png" type="image/x-icon" />
+
+    <style>
+        .container {
+            font-family: "標楷體", "Tahoma";
+        }
+        
+        section {
+            background-image: url(./images/bg3-1.png);
+            background-repeat: repeat;
+        }
+        
+        h3 a {
+            color: var(--mycolor24);
+        }
+        
+        .login {
+            /* background-color: rgb(213, 210, 193); */
+            background-color: rgb(189, 142, 98);
+            background: linear-gradient( 135deg, rgba(189, 142, 98, 1) 0%, rgba(189, 142, 98, 0.3) 30%, rgba(189, 142, 98, 0.5) 70%, rgba(189, 142, 98, 0.9) 100%);
+            border-radius: 25px;
+            border: 1px solid var(--mycolor14);
+            color: var(--mycolor14);
+        }
+        
+        input {
+            font-size: 20px;
+            color: var(--mycolor18);
+        }
+        
+        .cfm1 {
+            background-color: var(--mycolor16);
+            border-radius: 10px;
+        }
+        
+        .cfm1:hover {
+            background-color: var(--mycolor18);
+            color: var(--mytext02);
+        }
+        
+        .submit {
+            background-color: var(--mycolor16);
+            font-size: 24px;
+            border-radius: 10px;
+        }
+        
+        .submit:hover {
+            background-color: var(--mycolor18);
+            color: var(--mytext02);
+        }
+        
+        a.forget1,
+        a.forget2 {
+            color: var(--mycolor18);
+        }
+        
+        a.forget1:hover,
+        a.forget2:hover {
+            color: var(--mytext02);
+            display: block;
+            background-color: var(--mycolor18);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container text-dark">
+        <section class="bg-cover p-5 mt-0">
+            <div class="row align-items-center">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-3 offset-1">
+                    <div class="row align-items-center flex flex-column">
+                        <div class="col-12 col-sm-10 col-lg-8 text-center bg-cover">
+                            <a href="./index.html" class="m-3">
+                                <img style="height: 15vh;" src="./images/logo/virgo_logo5.png" title="抱皂美人圖標" alt="抱皂美人圖標" />
+                            </a>
+                        </div>
+
+                        <div class="col-12 col-sm-12 col-lg-10 text-center text-bg-light my-5">
+                            <h5 class="py-2 text-muted">簡單 不簡單</h5>
+                            <h6 class="my-5">
+                                <a href="login.html" class="text-decoration-none d-inline-flex">會員登入</a
+                  >
+                  <hr />
+                  <a href="member_1.php" class="text-decoration-none"
+                    >註冊新會員</a
+                  >
+                </h6>
+              </div>
+
+              <div
+                class="col-12 col-sm-10 col-lg-8 text-center text-bg-light my-5"
+              >
+                <h6>More info. :</h6>
+                <hr />
+
+                <div class="d-inline-flex">
+                  <a href="#"
+                    ><img
+                      class="m-1"
+                      src="./images/Icons/facebook.svg"
+                      alt="臉書粉絲團"
+                      width="30px"
+                  /></a>
+                                <a href="#"><img class="m-1" src="./images/Icons/instagram.svg" alt="IG粉絲團" width="30px" /></a>
+                                <a href="#"><img class="m-1" src="./images/Icons/youtube.svg" alt="youtube介紹" width="30px" /></a>
+                                <a href="#"><img class="m-1" src="./images/Icons/twitter.svg" alt="twitter專訪" width="30px" /></a>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-10 col-lg-8 text-center text-bg-light my-5">
+                        <h6>與我聯絡 :</h6>
+                        <a class="text-decoration-none text-muted" href="mailto: looloo.soap@gmail.com">looloo.soap@gmail.com</a
+                >
+                <br />
+                <img
+                  class="mb-4"
+                  src="./images/Icons/抱皂美人信箱.png"
+                  alt=""
+                  width="80vw"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-12 col-md-10 col-lg-7 p-5">
+            <div class="row justify-content-center align-items-start">
+              <div class="col-12">
+                <form action="" class="login px-5 rounded-5">
+                  <h3 class="text-center my-5">Welcome ● 歡迎會員登入</h3>
+                  <hr />
+                  <!--第一列 -->
+                  <div class="row">
+                    <div class="col-12">
+                      <label for="account" class="form-label"
+                        >請輸入帳號8-12碼</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control mb-3"
+                        id="account"
+                        name="account"
+                        placeholder="英文有大小寫之分"
+                      />
+                    </div>
+                  </div>
+
+                  <!--第二列 -->
+                  <div class="row">
+                    <div class="col-12">
+                      <label for="passwd" class="form-label">請輸入密碼</label>
+                      <input
+                        type="text"
+                        class="form-control mb-3"
+                        id="passwd"
+                        name="passwd"
+                        placeholder=""
+                      />
+                    </div>
+                  </div>
+
+                  <!--第三列 -->
+                  <div class="row flex d-flex align-items-center">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+                      <label for="cfm" class="form-label">請輸入驗證碼</label>
+                      <input
+                        type="text"
+                        class="form-control mb-3"
+                        id="cfm"
+                        name="cfm"
+                        placeholder="英文有大小寫之分"
+                      />
+                    </div>
+                    <div
+                      class="col-12 col-sm-12 col-md-12 col-lg-2 text-lg-end"
+                    >
+                      <img
+                        src="./images/cfm1.jpg"
+                        alt=""
+                        width="80px"
+                        height="40px"
+                      />
+                    </div>
+                    <div
+                      class="col-12 col-sm-12 col-md-12 col-lg-4 text-lg-center"
+                    >
+                      <button class="btn px-3 cfm1">
+                        重新產生
+                      </button>
+                    </div>
+                  </div>
+
+                  <!--第四列 -->
+                  <div class="row">
+                    <div class="col-12">
+                      <h6 class="text-end my-4 d-inline-flex">
+                        <a href="#" class="text-decoration-none forget1"
+                          >忘記帳號？</a
+                        >
+                        /
+                        <a href="" class="text-decoration-none forget2"
+                          >忘記密碼？</a
+                        >
+                      </h6>
+                    </div>
+                  </div>
+
+                  <!--第五列 -->
+                  <div class="row mb-3">
+                    <div class="col-12 text-center p-2">
+                      <button
+                        type="submit"
+                        class="btn btn-info submit w-100 mb-5"
+                      >
+                        登入
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- 頁尾footer -->
+          <div class="row p-2">
+            <div class="col-12">
+              <footer class="text-muted text-end">
+                <h6>@此網站由抱皂美人設計團隊維護</h6>
+              </footer>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/jquery-3.7.1.min.js"></script>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>手工皂-技法介紹</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/mine.css" />
+    <link rel="shortcut icon" href="./images/logo/virgo_logo2.png" type="image/x-icon" />
+    <!-- CSS -->
+    <style>
+        .container {
+            background: rgb(47, 24, 18);
+            background: linear-gradient(115deg, rgba(47, 24, 18, 0.4) 10%, rgb(189, 142, 98, 0.5) 30%, rgba(189, 142, 98, 0.3) 45%, rgba(189, 142, 98, 0.5) 55%, rgba(47, 24, 18, 0.5) 70%, rgba(47, 24, 18, 0.8) 90%);
+            font-family: "標楷體", "Tahoma";
+        }
+        
+        .navbar a,
+        .navbar btn {
+            width: 10vw;
+            height: 3vw;
+        }
+        
+        .nav_li {
+            background: rgb(255, 255, 255);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0.8) 70%, rgba(255, 255, 255, 0.1) 90%);
+            border-radius: 10px;
+            text-align: center;
+            margin-right: 10px;
+            padding-bottom: 10px; 
+            /* width: 10vw; */
+        }
+        
+        .nav_li:nth-child(6) {
+            background: none;
+        }
+        
+        .nav_li a {
+            color: var(--mycolor14);
+        }
+        
+        .nav_li:hover {
+            color: var(--mycolor14);
+            background-color: rgb(233, 169, 169);
+        }
+        
+        .dropdown-menu a:hover {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0.8) 70%, rgba(255, 255, 255, 0.1) 90%);
+            font-size: 1.1rem;
+            color: var(--mycolor14);
+            border-radius: 30px;
+        }
+        
+        .slide-pic {
+            width: 100vw;
+            height: 45vw;
+        }
+        
+        .carousel-item h2 a {
+            color: var(--mytext02);
+            text-decoration: none;
+            background: rgb(16, 43, 28);
+            background: linear-gradient( 135deg, rgba(16, 43, 28, 0.2) 25%, rgba(50, 53, 52, 0.8) 50%, rgba(53, 54, 53, 0.7) 70%, rgba(54, 54, 54, 0.3) 90%);
+        }
+        
+        .carousel-item h2 a.slide_1:hover {
+            color: orangered;
+            background-color: var(--mycolor03);
+        }
+        
+        .carousel-item h2 a.slide_2:hover {
+            color: var(--mytext03);
+            background-color: var(--mycolor13);
+        }
+        
+        .carousel-item h2 a.slide_3:hover {
+            color: var(--mycolor01);
+            background-color: var(--mycolor06);
+        }
+        
+        @media screen and (max-width: 991px) {
+            .carousel-item h2 a {
+                font-size: 0.8rem;
+            }
+            .navbar-brand img {
+                text-align: center;
+            }
+            .nav_li {
+                border-radius: 10px;
+                margin: 5px;
+                padding-bottom: 20px;
+                padding-left: 10px;
+                width: 14vw;
+                font-size: 0.8rem;
+            }
+            #navbarNav .navbar-nav {
+                margin-top: 30px;
+            }
+            .nav_li:hover {
+                color: var(--mytext02);
+                font-weight: bold;
+                background-color: var(--mycolor14);
+            }
+            #navbarNav .dropdown ul.dropdown-menu {
+                font-size: 0.8rem;
+                padding-top: 20px;
+            }
+        }
+        
+        .dropdown-menu ul.dropdown-menu li a:hover {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.6) 70%, rgba(255, 255, 255, 0.1) 90%);
+            border-radius: 15px;
+        }
+        
+        @media screen and (max-width: 767px) {
+            .nav_li {
+                font-size: 0.7rem;
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container bg-cover">
+        <div class="row p-3 navbarRow d-flex mb-3">
+            <div class="col-12 col-md-12 col-lg-10 col-xl-8">
+                <nav class="navbar navbar-expand-lg navbar-light align-items-center m-2">
+                    <a href="index.html" class="navbar-brand d-block mb-5">
+                        <img width="130px" src="./images/logo/virgo_logo5.png" alt="抱皂美人圖標" alt="">
+                    </a>
+                    <button class="navbar-toggler" type="button" style="width: 6vw;" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse mt-3" id="navbarNav">
+                        <ul class="navbar-nav mx-3">
+                            <li class="nav-item fs-5 nav_li">
+                                <a class="nav-link" href="about.html">緣起初心
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown fs-5 nav_li">
+                                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" href="technique.html">好油好皂
+                                </a>
+                                <ul class="dropdown-menu border-0" style="background:none;">
+                                    <li><a class="dropdown-item" href="swirl.html" style="height: 25px">渲染冷製皂</a></li>
+                                    <li><a class="dropdown-item" href="layer.html" style="height: 25px">分層冷製皂</a></li>
+                                    <li><a class="dropdown-item" href="special.html" style="height: 25px">特殊冷製皂</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown fs-5 nav_li">
+                                <a class="nav-link dropdown-toggle text-center mx-1" role="button" data-bs-toggle="dropdown" href="custom.html">量身打皂
+                                </a>
+                                <ul class="dropdown-menu border-0" style="background:none;">
+                                    <li><a class="dropdown-item" href="bmilk.html" style="height: 25px">母乳寶貝皂</a></li>
+                                    <li><a class="dropdown-item" href="cleanse.html" style="height: 25px">溫和潔膚皂</a></li>
+                                    <li><a class="dropdown-item" href="hydrate.html" style="height: 25px">輕潤保濕皂</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown fs-5 nav_li">
+                                <a class="nav-link dropdown-toggle text-center" role="button" data-bs-toggle="dropdown" href="product.html">自用送禮
+                                </a>
+                                <ul class="dropdown-menu border-0" style="background:none;">
+                                    <li><a class="dropdown-item" href="giftbox.html" style="height: 25px">手工皂禮盒</a></li>
+                                    <li><a class="dropdown-item" href="laundry.html" style="height: 25px">家事皂組合</a></li>
+                                    <li><a class="dropdown-item" href="fragrance.html" style="height: 25px">香氛禮品組</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item fs-5 nav_li">
+                                <a class="nav-link text-center" href="mailto: looloo.soap@gmail.com">與我聯絡
+                                </a>
+                            </li>
+                            <li class="nav-item fs-5 nav_li">
+                                <a class="nav-link text-center" href="cart.php">購物車
+                                    <img src="./images/Icons/cart.png" width="40px;">
+                                </a>
+                            </li>
+
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="row carouselRow ">
+            <div class="col-12 ">
+                <!-- 投影片架構 -->
+                <div id="slideshow " class="carousel slide " data-bs-ride="carousel ">
+
+                    <!-- 圖片投影 元件１-->
+                    <div class="carousel-inner ">
+
+                        <!-- 第一張圖片 active　-->
+                        <div class="carousel-item active ">
+                            <img class="slide-pic d-block w-100 " src="./images/soap_swirl6.jpg " alt="slide1 " />
+                            <div class="carousel-caption ">
+                                <h2><a href="swirl.html " class="slide_1 ">手工皂渲染技法</a></h2>
+                            </div>
+                        </div>
+
+
+                        <!-- 第二張圖片 -->
+                        <div class="carousel-item ">
+                            <img class="slide-pic d-block w-100 " src="./images/soap_swirl0.jpg " alt="slide2 " />
+                            <div class="carousel-caption ">
+                                <h2><a href="layer.html " class="slide_2 ">手工皂分層技法</a></h2>
+                            </div>
+                        </div>
+
+                        <!-- 第三張圖片 -->
+                        <div class="carousel-item ">
+                            <img class="slide-pic d-block w-100 " src="./images/soap_swirl7.jpg " alt="slide3 " />
+                            <div class="carousel-caption ">
+                                <h2><a href="special.html " class="slide_3 ">手工皂特殊技法</a></h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 左右按鈕　元件２ -->
+                    <!-- 左邊按鈕 -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#slideshow" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <!-- 右邊按鈕 -->
+                    <button class="carousel-control-next" type="button" data-bs-target="#slideshow" data-bs-slide="next">
+                      <span class="carousel-control-next-icon"></span>
+                    </button>
+                    <!-- 指示按鈕　元件３ -->
+                    <div class="carousel-indicators">
+                        <button type="button " data-bs-target="#slideshow " data-bs-slide-to="0 " class="active"></button>
+                        <button type="button " data-bs-target="#slideshow " data-bs-slide-to="1 "></button>
+                        <button type="button " data-bs-target="#slideshow " data-bs-slide-to="2 "></button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row pt-3 pb-3 ">
+            <div class="col-12 ">
+                <footer class="text-white text-end ">
+                    <h6>@此網站由抱皂美人設計團隊維護</h6>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./js/bootstrap.bundle.min.js "></script>
+    <script src="./js/jquery-3.7.1.min.js "></script>
+    
+</body>
+
+</html>

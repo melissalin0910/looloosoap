@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>後端商品資料以表格接收</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mine.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-lg-10 pt-5">
+                <table class="table table-bordered table-striped table-rwd">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>商品編號</th>
+                            <th>商品名稱</th>
+                            <th>商品價格</th>
+                            <th>商品數量</th>
+                            <th>商品備註</th>
+                            <th>建檔時間</th>
+                            <th>修改/刪除</th>
+                        </tr>
+                    </thead>
+                    <tbody id="mytable">
+                        <tr>
+                            <td data-th="商品編號">XX</td>
+                            <td data-th="商品名稱">XXX</td>
+                            <td data-th="商品價格">XX</td>
+                            <td data-th="商品數量">XX</td>
+                            <td data-th="商品備註">XX</td>
+                            <td data-th="建檔時間">XX</td>
+                            <td data-th="修改/刪除">
+                                <button class="btn btn-success">修改</button>
+                                <button class="btn btn-danger">刪除</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- updateModal -->
+    <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">產品更新</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="" class="form-label">商品名稱</label>
+                        <input type="text" class="form-control" disabled id="m_pname">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">商品價格</label>
+                        <input type="number" class="form-control" id="m_price">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">數量</label>
+                        <input type="number" class="form-control" id="m_pnum">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="m_update_btn">更新</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 
+    1.接收後端商品資料
+    2.將資料以table的格式顯示出來
+    3.後端資料變動時前端畫面會隨之改變 
+    -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        var p_id; //公有變數 用來處理更新行為
+        $(function () {
+            $.ajax({
+                type: "GET",
+                url: "ReadDB.php",
+                dataType: "json",
+                async: false,
+                success: showdata,
+                error: function () {
+                    alert("資料錯誤!");
+                }
+            });
+
+            //監聽修改按鈕update_btn
+            $("#mytable #update_btn").click(function () {
+                console.log($(this).data("id"));
+                console.log($(this).data("pname"));
+                console.log($(this).data("price"));
+                console.log($(this).data("pnum"));
+                
+
+                p_id = $(this).data("id");
+                $("#m_pname").val($(this).data("pname"));
+                $("#m_price").val($(this).data("price"));
+                $("#m_pnum").val($(this).data("pnum"));
+            });
+
+            //監聽刪除按鈕delete_btn
+            $("#mytable #delete_btn").click(function () {
+                if(confirm("確認要刪除" + $(this).data("id") +"嗎?")){
+                    console.log($(this).data("id"));
+
+                    //傳遞至後端20231211-DeleteDB.php 執行刪除行為
+                    $.ajax({
+                        type: "POST",
+                        url: "DeleteDB.php",
+                        data: {id: $(this).data("id")},
+                        success: showdata_delete,
+                        error: function(){
+                            alert("刪除錯誤!");
+                        }
+                    });
+                }
+            });
+
+            //監聽modal 更新按鈕m_update_btn
+            $("#m_update_btn").click(function () {
+                console.log(p_id);
+                console.log($("#m_pname").val());
+                console.log($("#m_pnum").val());
+                console.log($("#m_price").val());
+
+                //傳遞至後端api 執行更新行為
+                $.ajax({
+                    type: "POST",
+                    url: "UpdateDB.php",
+                    data: { id: p_id, price: $("#m_price").val(), pnum: $("#m_pnum").val() },
+                    success: showdata_update,
+                    error: function () {
+                        alert("更新錯誤!")
+                    }
+                });
+            });
+        });
+        function showdata(data) {
+            console.log(data);
+
+            $("#mytable").empty();
+            data.forEach(function (item) {
+                console.log(item.Pname);
+                var strHTML = '<tr><td data-th="商品編號">' + item.ID + '</td><td data-th="商品名稱">' + item.Pname + '</td><td data-th="商品價格">' + item.Price + '</td><td data-th="商品數量">' + item.Pnum + '</td><td data-th="商品備註">' + item.Premark + '</td><td data-th="建檔時間">' + item.Created_at + '</td><td data-th="修改/刪除"><button class="btn btn-success me-1"  data-bs-toggle="modal" data-bs-target="#updateModal" data-id="' + item.ID + '" data-pname="' + item.Pname + '" data-pnum="' + item.Pnum + '" data-price="' + item.Price + '" id="update_btn">修改</button><button class="btn btn-danger" data-id="' + item.ID + '" id="delete_btn">刪除</button></td></tr>';
+                $("#mytable").append(strHTML);
+            });
+        }
+
+        function showdata_update(data) {
+            console.log(data);
+            if (data == '更新成功!') {
+                alert(data);
+                location.href = 'table.html';
+            } else {
+                alert(data);
+                location.href = 'table.html';
+            }
+        }
+
+        function showdata_delete(data){
+            console.log(data);
+            if (data == '刪除成功!') {
+                alert(data);
+                location.href = 'table.html';
+            } else {
+                alert(data);
+                location.href = 'table.html';
+            }
+        }
+    </script>
+</body>
+
+</html>

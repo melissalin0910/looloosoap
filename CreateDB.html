@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新增商品資料</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mine.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="pname" class="form-label">商品名稱</label>
+                            <input type="text" class="form-control" id="pname">
+                        </div>
+                        <div class="mb-3">
+                            <label for="price" class="form-label">商品價格</label>
+                            <input type="number" class="form-control" min="0" max="1000" id="price">
+                        </div>
+                        <div class="mb-3">
+                            <label for="pnum" class="form-label">商品數量</label>
+                            <input type="number" class="form-control" min="0" max="100" id="pnum">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="remark" class="form-label">商品備註</label>
+                            <input type="text" class="form-control" id="premark">
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-secondary">取消</button>
+                            <button class="btn btn-success" id="ok_btn">確認</button>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            $("#ok_btn").click(function(){
+                console.log($("#pname").val());
+                console.log($("#price").val());
+                console.log($("#pnum").val());
+                console.log($("#premark").val());
+
+                //ajax傳遞至後端
+                $.ajax({
+                    type: "POST",
+                    url: "CreateDB.php",
+                    data: {pname: $("#pname").val(), price: $("#price").val(), pnum: $("#pnum").val(), premark: $("#premark").val()},
+                    success: showdata,
+                    error: function(){
+                        alert("資料錯誤!")
+                    }
+                });
+            });
+        });
+
+        function showdata(data){
+            console.log(data);
+            alert(data);
+            location.href = "CreateDB.html";
+        }
+    </script>
+</body>
+</html>

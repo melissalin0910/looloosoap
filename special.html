@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>特殊技法</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/mine.css" />
+    <link rel="shortcut icon" href="./images/logo/virgo_logo2.png" type="image/x-icon" />
+    <!-- CSS -->
+    <style>
+        .container {
+            background: rgb(47, 24, 18);
+            background: linear-gradient(115deg, rgba(47, 24, 18, 0.4) 10%, rgb(189, 142, 98, 0.5) 30%, rgba(189, 142, 98, 0.3) 45%, rgba(189, 142, 98, 0.5) 55%, rgba(47, 24, 18, 0.5) 70%, rgba(47, 24, 18, 0.8) 90%);
+            font-family: "標楷體", "Tahoma";
+        }
+        
+        .navbar a,
+        .navbar btn {
+            width: 10vw;
+            height: 3vw;
+        }
+        
+        .nav_li {
+            background: rgb(255, 255, 255);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0.8) 70%, rgba(255, 255, 255, 0.1) 90%);
+            border-radius: 10px;
+            text-align: center;
+            margin-right: 10px;
+            padding-bottom: 10px;
+            width: 10vw;
+        }
+        
+        .nav_li:nth-child(6) {
+            background: none;
+        }
+        
+        .nav_li a {
+            color: var(--mycolor14);
+        }
+        
+        .nav_li:hover {
+            color: var(--mycolor14);
+            background-color: rgb(233, 169, 169);
+        }
+        
+        .dropdown-menu a:hover {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0.8) 70%, rgba(255, 255, 255, 0.1) 90%);
+            font-size: 1.1rem;
+            color: var(--mycolor14);
+            border-radius: 30px;
+        }
+        
+        @media screen and (max-width: 991px) {
+            .carousel-item h2 a {
+                font-size: 0.8rem;
+            }
+            .navbar-brand img {
+                text-align: center;
+            }
+            .nav_li {
+                border-radius: 10px;
+                margin: 5px;
+                padding-bottom: 20px;
+                padding-left: 10px;
+                width: 14vw;
+                font-size: 0.8rem;
+            }
+            #navbarNav .navbar-nav {
+                margin-top: 30px;
+            }
+            .nav_li:hover {
+                color: var(--mytext02);
+                font-weight: bold;
+                background-color: var(--mycolor14);
+            }
+            #navbarNav .dropdown ul.dropdown-menu {
+                font-size: 0.8rem;
+                padding-top: 20px;
+            }
+        }
+        
+        .dropdown-menu ul.dropdown-menu li a:hover {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.6) 70%, rgba(255, 255, 255, 0.1) 90%);
+            border-radius: 15px;
+        }
+        
+        @media screen and (max-width: 767px) {
+            .nav_li {
+                font-size: 0.7rem;
+                padding: 5px;
+            }
+        }
+        
+        .wrapper h1 {
+            color: var(--mytext02);
+            background: rgb(16, 43, 28);
+            background: var(--mycolor14);
+        }
+        
+        .timeline {
+            position: relative;
+            z-index: 99;
+        }
+        
+        .timeline::before {
+            position: absolute;
+            content: "";
+            top: 15px;
+            bottom: 15px;
+            width: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-image: linear-gradient(180deg, rgba(255, 255, 0, 0.5), rgba(0, 0, 0, 0.8));
+        }
+        
+        .timeline-pointer {
+            position: relative;
+        }
+        
+        .timeline-pointer::before {
+            position: absolute;
+            content: '';
+            top: 15px;
+            width: 25px;
+            height: 25px;
+            background-color: var(--mytext02);
+            border: 8px solid var(--mycolor04);
+            border-radius: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .timeline-pointer:hover::before {
+            width: 35px;
+            height: 35px;
+            border: 8px solid var(--mycolor03);
+        }
+        
+        .special_text {
+            color: var(--mycolor14);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container bg-cover">
+        <div class="row p-3 navbarRow flex d-flex mb-3">
+            <div class="col-12 col-md-12 col-lg-10 col-xl-8">
+                <nav class="navbar navbar-expand-lg navbar-light align-items-center m-2">
+                    <a href="index.html" class="navbar-brand d-block mb-5">
+                        <img width="130px" src="./images/logo/virgo_logo5.png" alt="抱皂美人圖標" alt="">
+                    </a>
+                    <button class="navbar-toggler" type="button" style="width: 6vw;" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse mt-3" id="navbarNav">
+                        <ul class="navbar-nav mx-3">
+                            <li class="nav-item fs-5 nav_li">
+                                <a class="nav-link" href="about.html">緣起初心
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown fs-5 nav_li">
+                                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" href="technique.html">好油好皂
+                                </a>
+                                <ul class="dropdown-menu border-0" style="background:none;">
+                                    <li><a class="dropdown-item" href="swirl.html" style="height: 25px">渲染冷製皂</a></li>
+                                    <li><a class="dropdown-item" href="layer.html" style="height: 25px">分層冷製皂</a></li>
+                                    <li><a class="dropdown-item" href="special.html" style="height: 25px">特殊冷製皂</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown fs-5 nav_li">
+                                <a class="nav-link dropdown-toggle text-center mx-1" role="button" data-bs-toggle="dropdown" href="custom.html">量身打皂
+                                </a>
+                                <ul class="dropdown-menu border-0" style="background:none;">
+                                    <li><a class="dropdown-item" href="bmilk.html" style="height: 25px">母乳寶貝皂</a></li>
+                                    <li><a class="dropdown-item" href="cleanse.html" style="height: 25px">溫和潔膚皂</a></li>
+                                    <li><a class="dropdown-item" href="hydrate.html" style="height: 25px">輕潤保濕皂</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown fs-5 nav_li">
+                                <a class="nav-link dropdown-toggle text-center" role="button" data-bs-toggle="dropdown" href="product.html">自用送禮
+                                </a>
+                                <ul class="dropdown-menu border-0" style="background:none;">
+                                    <li><a class="dropdown-item" href="giftbox.html" style="height: 25px">潔膚皂禮盒</a></li>
+                                    <li><a class="dropdown-item" href="laundry.html" style="height: 25px">家事皂組合</a></li>
+                                    <li><a class="dropdown-item" href="fragrance.html" style="height: 25px">香氛禮品組</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item fs-5 nav_li">
+                                <a class="nav-link text-center" href="mailto: looloo.soap@gmail.com">與我聯絡
+                                </a>
+                            </li>
+                            <li class="nav-item fs-5 nav_li">
+                                <a class="nav-link text-center" href="cart.php">購物車
+                                   <img src="./images/Icons/cart.png" width="40px;">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </nav>
+            </div>
+        </div>
+
+        <div class="wrapper bg-light">
+            <h1 class="text-center border-bottom-1 py-1">特殊冷製皂技法</h1>
+            <div class="timeline">
+                <div class="row align-items-center timeline-pointer justify-content-around">
+                    <div class="col-12 col-md-12 col-lg-6 text-center">
+                        <div class="card d-flex flex-column align-items-center mt-5">
+                            <div class="card-body">
+                                <h3 class="fw-bold special_text">特殊技法組合1</h3>
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe width="500" height="300" src="https://www.youtube.com/embed/8mA8W8Yd10E?si=Leq9gyy7WkpF7r9V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-lg-6">
+                        <div class="myimg bg-cover mt-5">
+                            <img src="./images/soap_special3.jpg" class="img-thumbnail">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row flex flex-row-reverse align-items-center timeline-pointer justify-content-around">
+                    <div class="col-12 col-md-12 col-lg-6 text-center">
+                        <div class="card d-flex flex-column align-items-center mt-5">
+                            <div class="card-body">
+                                <h3 class="fw-bold special_text">特殊技法組合2</h3>
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe width="500" height="300" src="https://www.youtube.com/embed/sQJcIWLmrpU?si=3Bcs2ll0NClbBArg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen> 
+                                    </iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-lg-6">
+                        <div class="myimg bg-cover mt-5">
+                            <img src="./images/soap_special2.jpg" class="img-thumbnail">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row pt-3 pb-3">
+            <div class="col-12">
+                <footer class="text-white text-end">
+                    <h6>@此網站由抱皂美人設計團隊維護</h6>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./js/bootstrap.bundle.min.js "></script>
+    <script src="./js/jquery-3.7.1.min.js "></script>
+</body>
+
+</html>
